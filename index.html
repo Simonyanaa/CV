@@ -92,11 +92,11 @@
 
   .slab{--h:200px;--c:var(--blue-rgb);--edge:#6E9BFF;position:relative;flex:1 1 0;min-width:0;height:var(--h);transform-style:preserve-3d;
     transition:transform .45s var(--ease)}
-  .slab:nth-child(1){--h:168px}
-  .slab:nth-child(2){--h:182px}
-  .slab:nth-child(3){--h:198px;--c:122,132,255;--edge:#AFA9FF}
-  .slab:nth-child(4){--h:216px;--c:var(--amber-rgb);--edge:#FFC766}
-  .slab:nth-child(5){--h:236px;--c:var(--amber-rgb);--edge:#FFC766}
+  .slab:nth-child(1){--h:160px}
+  .slab:nth-child(2){--h:172px}
+  .slab:nth-child(3){--h:186px;--c:122,132,255;--edge:#AFA9FF}
+  .slab:nth-child(4){--h:200px;--c:var(--amber-rgb);--edge:#FFC766}
+  .slab:nth-child(5){--h:214px;--c:var(--amber-rgb);--edge:#FFC766}
 
   /* плавание — на внутреннем слое, чтобы не конфликтовать с hover */
   .float{position:absolute;inset:0;transform-style:preserve-3d;animation:bob 6s ease-in-out infinite;animation-delay:calc(var(--i) * -1.1s)}
@@ -211,6 +211,22 @@
     .hero .bg{transform:none}
   }
 
+
+
+  /* ================= КНОПКА «СКАЧАТЬ PDF» ================= */
+  .dl{position:absolute;top:16px;right:20px;z-index:5;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 12px;border-radius:999px;
+    font-size:var(--fs-14);font-weight:600;line-height:1;color:#fff;white-space:nowrap;
+    background:rgba(5,11,31,.45);border:1px solid rgba(255,255,255,.26);
+    backdrop-filter:blur(10px) saturate(160%);-webkit-backdrop-filter:blur(10px) saturate(160%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 8px 20px -10px rgba(0,0,0,.6);
+    transition:background-color var(--t) var(--ease),border-color var(--t) var(--ease),color var(--t) var(--ease),transform var(--t-fast) var(--ease)}
+  .dl .ico{--is:16px;--is-n:16;color:var(--amber);transition:transform var(--t) var(--ease)}
+  .dl:hover{background:rgba(var(--amber-rgb),.16);border-color:rgba(var(--amber-rgb),.7);color:#FFE3AE}
+  .dl:hover .ico{transform:translateY(2px)}
+  .dl:active{transform:scale(.97)}
+  .dl:focus-visible{outline-color:var(--amber);border-radius:999px}
+  @media (max-width:640px){.dl{top:12px;right:12px;height:34px;padding:0 12px 0 10px;font-size:13px}}
+  @media print{.dl{display:none}}
 
   /* ============ SECTION BITS ============ */
   .wrap{padding:24px 28px 16px;background:linear-gradient(180deg,var(--bg) 0,#fff 260px)}
@@ -508,6 +524,7 @@
   <!-- HERO -->
   <header class="hero" id="hero">
     <div class="bg" aria-hidden="true"></div>
+    <a class="dl" href="Simonyan_Aram_CV.pdf" download="Simonyan_Aram_CV.pdf" aria-label="Скачать резюме в PDF"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="m7 10 5 5 5-5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>Скачать PDF</a>
 
     <div class="hl">
       <h1>Арам<br>Симонян</h1>
